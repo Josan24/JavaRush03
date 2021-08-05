@@ -30,6 +30,10 @@ public class Catalogo {
 		return "Catalogo [catalogo=" + catalogo + "]";
 	}
 	
+	public void agregarJuego(Juego j) {
+		catalogo.add(j);
+	}
+		
 	
 	
 	
