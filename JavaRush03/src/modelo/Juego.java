@@ -73,8 +73,13 @@ public class Juego {
 
 	@Override
 	public String toString() {
-		return "Juego [rank=" + rank + ", nombre=" + nombre + ", plataforma=" + plataforma + ", ano=" + ano
-				+ ", genero=" + genero + ", editor=" + editor + "]";
+		return "\n"
+				+ "Juego " + rank + "\n"
+				+ "nombre = " + nombre + "\n"
+				+ " plataforma = " + plataforma + "\n"
+				+ " año = " + ano 				+ "\n"
+				+ " genero = " + genero + "\n"
+				+ " editor = " + editor + "\n";
 	}
 
 }

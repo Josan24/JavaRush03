@@ -1,40 +1,75 @@
 package Datos;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import modelo.Juego;
 
 public class Catalogo {
 
-	List<Juego> catalogo;
+	ArrayList<Juego> catalogo;
 
+	
+
+	
 	public Catalogo() {
 		super();
 	}
 
-	public Catalogo(List<Juego> catalogo) {
+
+	
+
+	public Catalogo(ArrayList<Juego> catalogo) {
 		super();
 		this.catalogo = catalogo;
 	}
 
-	public List<Juego> getCatalogo() {
+
+
+
+	public ArrayList<Juego> getCatalogo() {
 		return catalogo;
 	}
 
-	public void setCatalogo(List<Juego> catalogo) {
+
+
+	public void setCatalogo(ArrayList<Juego> catalogo) {
 		this.catalogo = catalogo;
 	}
+
+	
+
 
 	@Override
 	public String toString() {
 		return "Catalogo [catalogo=" + catalogo + "]";
 	}
+
 	
 	public void agregarJuego(Juego j) {
 		catalogo.add(j);
 	}
 		
 	
+
+
+
+
+
+	public void imprimirCatalogo() {
+		
+		Juego[] j = new Juego[0];
+		
+		Juego[] arrayJuegos = this.catalogo.toArray(j);
+		
+		for (int i = 0; i < arrayJuegos.length; i++) {
+			
+			System.out.println(arrayJuegos[i].toString());
+			
+		}
+		
+		
+	}
+
 	
 	
 }
