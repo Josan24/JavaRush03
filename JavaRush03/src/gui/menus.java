@@ -1,20 +1,53 @@
 package gui;
 
+import utilidades.LecturaDatos;
+
 public class menus {
 	
 	public static int menuInicial() {
-		
-		/*Menú inicial
-		 * Seleciona una opción: 
-		 * 1)Cargar juegos
-		 * 2)Mostrar catalogo 
-		 * 3)Editar juego
-		 * 4)Eliminar juego
-		 * 
-		 * 
-		 * 
-		 */
-		
+		int opcion = 0;
+        /*	**** Menú inicial ****
+         * 	1)Gestión de juegos (altas)
+         * 	2)Listado de juegos Género:"plataforma"
+         * 	3)Listado de juegos
+         * 	4)Juegos para consolas de Nintendo
+         * 	5)Listado de editores
+         * 	6)Los juegos del siglo XX
+         * 	7)Gestión de juegos (Edit, Delete)
+         * 	8)Listados de juegos (filtrados por todo tipo de géneros)
+         * 	9)Los juegos que aparecen en años pares
+         * 	Seleciona una opción: 
+         */
+
+        System.out.print("**** Menú inicial ****\n" +
+            "1) Gestión de juegos (altas)\n" +
+            "2) Listado de juegos Género:\"plataforma\"\n" +
+            "3) Listado de juegos\n" +
+            "4) Juegos para consolas de Nintendo\n" +
+            "5) Listado de editores\n" +
+            "6) Los juegos del siglo XX\n" +
+            "7) Gestión de juegos (Edit, Delete)\n" +
+            "8) Listados de juegos (filtrados por todo tipo de géneros)\n" +
+            "9) Los juegos que aparecen en años pares\n");
+        opcion = LecturaDatos.leerInteger("Seleciona una opción: ");
+           
+        return opcion;
+	}
+	
+	public static int menuGestionJuegos() {
+		int opcion = 0;
+        /*	**** Menú Gestión de Juegos ****
+         * 	1)Editar Juego
+         * 	2)Eliminar Juego
+         * 	Seleciona una opción: 
+         */
+
+        System.out.print("**** Menú Gestión de Juegos ****\n" +
+            "1) Editar Juego\n" +
+            "2) Eliminar Juego\n");
+        opcion = LecturaDatos.leerInteger("Seleciona una opción: ");
+           
+        return opcion;
 	}
 
 }
