@@ -49,5 +49,27 @@ public class menus {
            
         return opcion;
 	}
+	
+	public static int menuEditarJuego() {
+		int opcion = 0;
+        /*	**** Menú Editar Juego ****
+         * 	1)Nombre
+         * 	2)Plataforma
+         * 	3)Año
+         * 	4)Genero
+         * 	5)Editor
+         * 	Seleciona campo a editar:
+         */
+
+        System.out.print("**** Menú Editar Juego ****\n" +
+    		"1)Nombre\n" +
+    		"2)Plataforma\n" +
+    		"3)Año\n" +
+    		"4)Genero\n" +
+    		"5)Editor\n");
+        opcion = LecturaDatos.leerInteger("Seleciona campo a editar: ");
+           
+        return opcion;
+	}
 
 }
