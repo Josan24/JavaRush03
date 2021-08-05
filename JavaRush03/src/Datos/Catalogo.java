@@ -1,7 +1,6 @@
 package Datos;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import modelo.Juego;
 
@@ -45,6 +44,14 @@ public class Catalogo {
 		return "Catalogo [catalogo=" + catalogo + "]";
 	}
 
+	
+	public void agregarJuego(Juego j) {
+		catalogo.add(j);
+	}
+		
+	
+
+
 
 
 
@@ -62,6 +69,7 @@ public class Catalogo {
 		
 		
 	}
+
 	
 	
 }
