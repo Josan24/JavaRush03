@@ -34,10 +34,16 @@ public class LecturaFichero {
 				// Creamos el juego a introducir
 
 				Juego j = new Juego();
+
 				j.setRank(Integer.parseInt(campos[0]));
+
 				j.setNombre(campos[1]);
 				j.setPlataforma(campos[2]);
-				j.setAno(Integer.parseInt(campos[3]));
+				try {
+					j.setAno(Integer.parseInt(campos[3]));
+				} catch (NumberFormatException e) {
+					j.setAno(0);
+				}
 				j.setGenero(campos[4]);
 				j.setEditor(campos[5]);
 
