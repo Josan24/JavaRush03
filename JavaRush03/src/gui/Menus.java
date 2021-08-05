@@ -1,23 +1,12 @@
 package gui;
 
+import modelo.Juego;
 import utilidades.LecturaDatos;
 
-public class menus {
+public class Menus {
 	
 	public static int menuInicial() {
 		int opcion = 0;
-        /*	**** Menú inicial ****
-         * 	1)Gestión de juegos (altas)
-         * 	2)Listado de juegos Género:"plataforma"
-         * 	3)Listado de juegos
-         * 	4)Juegos para consolas de Nintendo
-         * 	5)Listado de editores
-         * 	6)Los juegos del siglo XX
-         * 	7)Gestión de juegos (Edit, Delete)
-         * 	8)Listados de juegos (filtrados por todo tipo de géneros)
-         * 	9)Los juegos que aparecen en años pares
-         * 	Seleciona una opción: 
-         */
 
         System.out.print("**** Menú inicial ****\n" +
             "1) Gestión de juegos (altas)\n" +
@@ -36,11 +25,6 @@ public class menus {
 	
 	public static int menuGestionJuegos() {
 		int opcion = 0;
-        /*	**** Menú Gestión de Juegos ****
-         * 	1)Editar Juego
-         * 	2)Eliminar Juego
-         * 	Seleciona una opción: 
-         */
 
         System.out.print("**** Menú Gestión de Juegos ****\n" +
             "1) Editar Juego\n" +
@@ -50,18 +34,10 @@ public class menus {
         return opcion;
 	}
 	
-	public static int menuEditarJuego() {
+	public static int menuEditarJuego(Juego juego) {
 		int opcion = 0;
-        /*	**** Menú Editar Juego ****
-         * 	1)Nombre
-         * 	2)Plataforma
-         * 	3)Año
-         * 	4)Genero
-         * 	5)Editor
-         * 	Seleciona campo a editar:
-         */
 
-        System.out.print("**** Menú Editar Juego ****\n" +
+        System.out.print("**** Editar Juego " + juego.getNombre() +" ****\n" +
     		"1)Nombre\n" +
     		"2)Plataforma\n" +
     		"3)Año\n" +
