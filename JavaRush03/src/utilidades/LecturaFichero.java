@@ -7,12 +7,25 @@ import java.util.ArrayList;
 
 import modelo.Juego;
 
+/**
+ * @author JavaRush (Jose Antonio)
+ * Clase para cargar archivo CSV 
+ *
+ */
 public class LecturaFichero {
 
 	public static final String SEPARADOR = ",";
 
 	static BufferedReader lector = null;
 
+	/**
+	 * Metodo que carga CSV en ArrayList y devuelve dicho ArrayList.
+	 * El metodo comprueba si el ano el juego es un numero o 
+	 * si es N/A y en este ultimo caso cargaria 0 en el atributo ano
+	 * 
+	 * @return ArrayList<Juego>
+	 * 
+	 */
 	public static ArrayList<Juego> cargaInicial() {
 
 		ArrayList<Juego> lista = new ArrayList<Juego>();
