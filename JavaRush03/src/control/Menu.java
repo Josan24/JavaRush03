@@ -26,7 +26,8 @@ public class Menu {
 				break;
 			case 3:
 				System.out.println("Listado de juegos");
-				c.imprimirCatalogo();
+				GestionCatalogo gc2 = new GestionCatalogo();
+				gc2.generarInforme(c);
 				
 				break;
 			case 4:

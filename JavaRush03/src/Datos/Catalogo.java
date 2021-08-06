@@ -8,8 +8,7 @@ import modelo.Juego;
  * 
  * @author alumno
  *
- *La clase catalogo es una biblioteca que llama a la clase Juego para, 
- *cogiendo el arraylist que los contiene todos, agregar uno nuevo e imprimirlo.
+ *Clase que comprende la biblioteca de juegos
  */
 public class Catalogo {
 
@@ -37,10 +36,14 @@ public class Catalogo {
 		return "Catalogo [catalogo=" + catalogo + "]";
 	}
 
-	public void agregarJuego(Juego j) {
+	public void agregarJuego(Juego j) { 
 		catalogo.add(j);
 	}
 
+	/**
+	 * Metodo para agregar juegos nuevos e incluirlos en Catalogo
+	 */
+	
 	public void imprimirCatalogo() {
 
 		Juego[] j = new Juego[0];
