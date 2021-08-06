@@ -22,6 +22,7 @@ public class Menu {
 			case 2:
 				
 				System.out.println("Listado de juegos Genero:\"plataforma\"");
+				listadoJuegosGeneroPlataforma(c);
 				
 				break;
 			case 3:
@@ -58,5 +59,22 @@ public class Menu {
 		}while(option != 0);
 		
 	}
+	
+	
+	/**
+	 * Lista todos los juegos del genero plataforma del catalogo
+	 * @author Jose Antonio Ramos
+	 * @param Catalogo c
+	 */
+	public static void listadoJuegosGeneroPlataforma(Catalogo c) {
+		
+		String genero = "Platform";
+		
+		System.out.println(new GestionCatalogo().listaPorGenero(c, genero));
+		
+		
+	}
+	
+	
 
 }

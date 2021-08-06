@@ -1,11 +1,23 @@
 package services;
 
+import java.util.ArrayList;
+
 import Datos.Catalogo;
 import modelo.Juego;
 import utilidades.LecturaDatos;
 
+/**
+ * Clase para gestionar y hacer cambios en el catalogo.
+ * El catalogo contiene todos los juegos cargados desde un CSV en un ArrayList
+ * @author JavaRush
+ *
+ */
 public class GestionCatalogo {
 
+	/**
+	 * Clase que crea un nuevo juego pidiendo al usuario los datos del juego por teclado
+	 * @return Juego
+	 */
 	public Juego nuevoJuego() {
 
 		Juego j = new Juego();
@@ -21,8 +33,29 @@ public class GestionCatalogo {
 
 	}
 
+	/**
+	 * Metodo que agrega un juego al ArrayList de un Catalogo
+	 * @param Catalogo c
+	 */
 	public void agregarAlCatalogo(Catalogo c) {
 		c.agregarJuego(nuevoJuego());
 	}
+	
+	public ArrayList<Juego> listaPorGenero(Catalogo c, String genero){
+		
+		ArrayList<Juego> filtrado = new ArrayList<Juego>();
+		
+		for(Juego juego : c.getCatalogo()) {
+			if(juego.getGenero().equals(genero)) {
+				//Añadimos el juego si tiene el mismo genero por el que filtramos
+				filtrado.add(juego);
+			}
+		}
+		
+		// Devolvemos la lista de juegos ya filtrados
+		return filtrado;
+	}
+	
+	
 
 }
