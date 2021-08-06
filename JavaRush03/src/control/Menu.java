@@ -15,7 +15,7 @@ public class Menu {
 			
 			case 1:
 				GestionCatalogo gc = new GestionCatalogo();			
-				System.out.println("Añadir un nuevo juego");
+				System.out.println("Anadir un nuevo juego");
 				gc.agregarAlCatalogo(c);
 				
 				break;
@@ -42,12 +42,11 @@ public class Menu {
 				break;
 			case 7:
 				System.out.println("Gestión de juegos (Edit, Delete)");
-				//Buscar juego
-				//llamar menuEditarjuego(juego);
+				PantallaMenus.menuGestionJuegos();
 				
 				break;
 			case 8:
-				System.out.println("Listados de juegos (filtrados por todo tipo de géneros)");
+				System.out.println("Listados de juegos (filtrados por todo tipo de generos)");
 				break;
 			case 9:
 				System.out.println("Los juegos que aparecen en años pares");

@@ -36,10 +36,10 @@ public class PantallaMenus {
         return opcion;
 	}
 	
-	public static int menuEditarJuego(Juego juego) {
+	public static int menuEditarJuego() {
 		int opcion = 0;
 
-        System.out.print("**** Editar Juego " + juego.getNombre() +" ****\n" +
+        System.out.print("**** Editar Juego ****\n" +
     		"1)Nombre\n" +
     		"2)Plataforma\n" +
     		"3)Año\n" +
