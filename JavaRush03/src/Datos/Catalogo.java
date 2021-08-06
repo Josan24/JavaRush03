@@ -12,7 +12,7 @@ import modelo.Juego;
  */
 public class Catalogo {
 
-	ArrayList<Juego> catalogo;
+	public ArrayList<Juego> catalogo;
 
 	public Catalogo() {
 		super();
@@ -57,5 +57,6 @@ public class Catalogo {
 		}
 
 	}
+	
 
 }

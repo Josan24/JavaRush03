@@ -51,6 +51,32 @@ public class GestionCatalogo {
 		c.imprimirCatalogo();
 	}
 	
+	public void eliminarJuego(Catalogo c) {
+		
+		
+		int id = LecturaDatos.leerInteger("Introduce el ID: ");
+		boolean encontrado = false;
+		
+		for (int i = 0; i < c.catalogo.size(); i++) {
+			
+			if (id == c.catalogo.get(i).getRank()) {
+				
+				c.catalogo.remove(i);
+				encontrado = true;
+			}
+			
+			
+		}
+		
+		if (encontrado) {
+			
+			System.out.println("Se ha eliminado el juego. \n");
+		} else {
+			
+			System.out.println("No hay ningún juego con ese ID. \n");
+		}
+	}
+
 	
 	public ArrayList<Juego> listaJuegosNintendo(Catalogo c){
 		
@@ -85,6 +111,7 @@ public class GestionCatalogo {
 		
 		// Devolvemos la lista de juegos ya filtrados
 		return filtrado;
+
 	}
 	
 	public void listaEditores(Catalogo c) {
