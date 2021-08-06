@@ -3,6 +3,7 @@ package services;
 import java.util.ArrayList;
 
 import Datos.Catalogo;
+import modelo.ConsolasNintendo;
 import modelo.Juego;
 import utilidades.LecturaDatos;
 
@@ -43,8 +44,6 @@ public class GestionCatalogo {
 	}
 	
 	
-
-	
 	public void generarInforme(Catalogo c) {
 		c.imprimirCatalogo();
 	}
@@ -73,9 +72,42 @@ public class GestionCatalogo {
 			
 			System.out.println("No hay ningún juego con ese ID. \n");
 		}
+	}
 
+	
+	public ArrayList<Juego> listaJuegosNintendo(Catalogo c){
+		
+		ArrayList<Juego> filtrado = new ArrayList<Juego>();
+		
+		for(Juego juego : c.getCatalogo()) {
+			if(juego.getPlataforma().equals(ConsolasNintendo.WII.getConsolas())) {
+				filtrado.add(juego);
+			}
+			if(juego.getPlataforma().equals(ConsolasNintendo.GB.getConsolas())) {
+				filtrado.add(juego);
+			}
+			if(juego.getPlataforma().equals(ConsolasNintendo.NES.getConsolas())) {
+				filtrado.add(juego);
+			}
+			if(juego.getPlataforma().equals(ConsolasNintendo.DS.getConsolas())) {
+				filtrado.add(juego);
+			}
+			if(juego.getPlataforma().equals(ConsolasNintendo.SNES.getConsolas())) {
+				filtrado.add(juego);
+			}
+			if(juego.getPlataforma().equals(ConsolasNintendo.GBA.getConsolas())) {
+				filtrado.add(juego);
+			}
+			if(juego.getPlataforma().equals(ConsolasNintendo.TRESDS.getConsolas())) {
+				filtrado.add(juego);
+			}
+			if(juego.getPlataforma().equals(ConsolasNintendo.N64.getConsolas())) {
+				filtrado.add(juego);
+			}
+		}
+		
+		// Devolvemos la lista de juegos ya filtrados
+		return filtrado;
 
-		
-		
 	}
 }
