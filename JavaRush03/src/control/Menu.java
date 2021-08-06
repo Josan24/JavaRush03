@@ -1,11 +1,14 @@
 package control;
 
+import java.util.ArrayList;
+
 import Datos.Catalogo;
 import gui.PantallaMenus;
 import services.GestionCatalogo;
 
 public class Menu {
 	public static void controlMenu(Catalogo c) {
+		GestionCatalogo gc2 = new GestionCatalogo();
 		int option = 0;
 		
 		do {
@@ -22,18 +25,18 @@ public class Menu {
 			case 2:
 				
 				System.out.println("Listado de juegos Genero:\"plataforma\"");
-				listadoJuegosGeneroPlataforma(c);
+				String genero = "Platform";
+				gc2.generarInforme(new Catalogo(gc2.listaPorGenero(c, genero)));
 				
 				break;
 			case 3:
 				System.out.println("Listado de juegos");
-				GestionCatalogo gc2 = new GestionCatalogo();
+				
 				gc2.generarInforme(c);
 				
 				break;
 			case 4:
 				System.out.println("Juegos para consolas de Nintendo");
-				listadoJuegosNintendoPlataforma(c);
 				gc2.generarInforme(new Catalogo(new GestionCatalogo().listaJuegosNintendo(c)));
 				break;
 			case 5:
@@ -63,25 +66,6 @@ public class Menu {
 		
 	}
 	
-	
-	/**
-	 * Lista todos los juegos del genero plataforma del catalogo
-	 * @author Jose Antonio Ramos
-	 * @param Catalogo c
-	 */
-	public static void listadoJuegosGeneroPlataforma(Catalogo c) {
-		
-		String genero = "Platform";
-		
-		System.out.println(new GestionCatalogo().listaPorGenero(c, genero));
-		
-		
-	}
-	
-	public static void listadoJuegosNintendoPlataforma(Catalogo c) {
-		
-		System.out.println(new GestionCatalogo().listaJuegosNintendo(c));
-		
-	}	
+
 
 }
