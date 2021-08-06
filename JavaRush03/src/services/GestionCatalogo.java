@@ -31,111 +31,111 @@ public class GestionCatalogo {
 	public void agregarAlCatalogo(Catalogo c) {
 		c.agregarJuego(nuevoJuego());
 	}
-	
-	public ArrayList<Juego> listaPorGenero(Catalogo c, String genero){
-		
+
+	public ArrayList<Juego> listaPorGenero(Catalogo c, String genero) {
+
 		ArrayList<Juego> filtrado = new ArrayList<Juego>();
-		
-		for(Juego juego : c.getCatalogo()) {
-			if(juego.getGenero().equals(genero)) {
-				//Anadimos el juego si tiene el mismo genero por el que filtramos
+
+		for (Juego juego : c.getCatalogo()) {
+			if (juego.getGenero().equals(genero)) {
+				// Anadimos el juego si tiene el mismo genero por el que filtramos
+
 				filtrado.add(juego);
 			}
 		}
-		
+
 		// Devolvemos la lista de juegos ya filtrados
 		return filtrado;
 	}
-	
-	
+
 	public void generarInforme(Catalogo c) {
 		c.imprimirCatalogo();
 	}
-	
+
 	public void eliminarJuego(Catalogo c) {
-		
-		
-		int id = LecturaDatos.leerInteger("Introduce el ID: ");
+
+		Juego eliminar = buscarJuego(c);
 		boolean encontrado = false;
-		
-		for (int i = 0; i < c.catalogo.size(); i++) {
-			
-			if (id == c.catalogo.get(i).getRank()) {
-				
-				c.catalogo.remove(i);
-				encontrado = true;
+
+		if (eliminar != null) {
+
+			for (int i = 0; i < c.catalogo.size(); i++) {
+
+				if (eliminar.getRank() == c.catalogo.get(i).getRank()) {
+
+					c.catalogo.remove(i);
+					encontrado = true;
+				}
+
 			}
-			
-			
 		}
-		
 		if (encontrado) {
-			
+
 			System.out.println("Se ha eliminado el juego. \n");
 		} else {
-			
-			System.out.println("No hay ningï¿½n juego con ese ID. \n");
+
+			System.out.println("No hay ningún juego con ese Nombre. \n");
+
 		}
 	}
 
-	
-	public ArrayList<Juego> listaJuegosNintendo(Catalogo c){
-		
+	public ArrayList<Juego> listaJuegosNintendo(Catalogo c) {
+
 		ArrayList<Juego> filtrado = new ArrayList<Juego>();
-		
-		for(Juego juego : c.getCatalogo()) {
-			if(juego.getPlataforma().equals(ConsolasNintendo.WII.getConsolas())) {
+
+		for (Juego juego : c.getCatalogo()) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.WII.getConsolas())) {
 				filtrado.add(juego);
 			}
-			if(juego.getPlataforma().equals(ConsolasNintendo.GB.getConsolas())) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.GB.getConsolas())) {
 				filtrado.add(juego);
 			}
-			if(juego.getPlataforma().equals(ConsolasNintendo.NES.getConsolas())) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.NES.getConsolas())) {
 				filtrado.add(juego);
 			}
-			if(juego.getPlataforma().equals(ConsolasNintendo.DS.getConsolas())) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.DS.getConsolas())) {
 				filtrado.add(juego);
 			}
-			if(juego.getPlataforma().equals(ConsolasNintendo.SNES.getConsolas())) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.SNES.getConsolas())) {
 				filtrado.add(juego);
 			}
-			if(juego.getPlataforma().equals(ConsolasNintendo.GBA.getConsolas())) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.GBA.getConsolas())) {
 				filtrado.add(juego);
 			}
-			if(juego.getPlataforma().equals(ConsolasNintendo.TRESDS.getConsolas())) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.TRESDS.getConsolas())) {
 				filtrado.add(juego);
 			}
-			if(juego.getPlataforma().equals(ConsolasNintendo.N64.getConsolas())) {
+			if (juego.getPlataforma().equals(ConsolasNintendo.N64.getConsolas())) {
 				filtrado.add(juego);
 			}
 		}
-		
+
 		// Devolvemos la lista de juegos ya filtrados
 		return filtrado;
 
 	}
-	
+
 	public void editarJuego(Catalogo c) {
-		
-		
-		int id = LecturaDatos.leerInteger("Introduce el ID: ");
+
+		Juego editar = buscarJuego(c);
 		boolean encontrado = false;
 		Juego juego = null;
-		
-		for (int i = 0; i < c.catalogo.size(); i++) {
-			
-			if (id == c.catalogo.get(i).getRank()) {
-				
-				juego = c.catalogo.get(i);
-				System.out.println("Juego encontrado\n");
-				encontrado = true;
+		if (editar != null) {
+
+			for (int i = 0; i < c.catalogo.size(); i++) {
+
+				if (editar.getRank() == c.catalogo.get(i).getRank()) {
+
+					juego = c.catalogo.get(i);
+					System.out.println("Juego encontrado\n");
+					encontrado = true;
+				}
 			}
-			
-			
+
 		}
-		
+
 		if (encontrado) {
-			
+
 			int option = 0;
 
 			do {
@@ -154,7 +154,7 @@ public class GestionCatalogo {
 
 					break;
 				case 3:
-				
+
 					juego.setAno(LecturaDatos.leerInteger("Nuevo ano: "));
 
 					break;
@@ -169,65 +169,89 @@ public class GestionCatalogo {
 
 					break;
 				case 0:
-					
+
 					option = 0;
 
 				}
 
 			} while (option != 0);
 		} else {
-			
-			System.out.println("No hay ningun juego con ese ID. \n");
+
+			System.out.println("No hay ningun juego con ese Nombre. \n");
 		}
 	}
 
 	public void listaEditores(Catalogo c) {
-		//Inicializo un set de editores para no tener valores repetidos
+		// Inicializo un set de editores para no tener valores repetidos
 		Set<String> editores = new HashSet<String>();
-		
-		for(Juego juego : c.getCatalogo()) {
+
+		for (Juego juego : c.getCatalogo()) {
 			editores.add(juego.getEditor());
 		}
-		
-		//Imprimimos la lista de editores
+
+		// Imprimimos la lista de editores
 		System.out.println(editores);
-		
+
 	}
-	
-	
+
+	public Juego buscarJuego(Catalogo c) {
+		String nombre;
+		do {
+			nombre = LecturaDatos.leerString("Introduce titulo del juego: ");
+		} while (nombre == null);
+
+		Juego game = new Juego();
+		boolean encontrado = false;
+		// Busco el juego por el nombre
+		for (Juego juego : c.getCatalogo()) {
+			if (juego.getNombre().equals(nombre)) {
+				game = juego;
+				encontrado = true;
+				break;
+			}
+
+		}
+
+		if (encontrado == true) {
+			return game;
+		} else {
+			game = null;
+			return game;
+		}
+	}
+
 	public void juegosAniosPares(Catalogo c) {
-		
+
 		Catalogo aniosPares = new Catalogo();
 		aniosPares.catalogo = new ArrayList<Juego>();
-		
-		
-		for(Juego juego : c.getCatalogo()) {
-			
-			if(juego.getAno() % 2 == 0) {
-				
+
+		for (Juego juego : c.getCatalogo()) {
+
+			if (juego.getAno() % 2 == 0) {
+
 				aniosPares.catalogo.add(juego);
 			}
-			
+
 		}
-		
+
 		aniosPares.imprimirCatalogo();
 	}
+
 	public void juegosSigloXX(Catalogo c) {
-		
+
 		Catalogo sigloXX = new Catalogo();
 		sigloXX.catalogo = new ArrayList<Juego>();
-		
-		
-		for(Juego juego : c.getCatalogo()) {
-			
-			if(juego.getAno() > 1899) {
-				
+
+		for (Juego juego : c.getCatalogo()) {
+
+			if (juego.getAno() > 1899) {
+
 				sigloXX.catalogo.add(juego);
 			}
-			
+
 		}
-		
+
 		sigloXX.imprimirCatalogo();
 	}
-	
+
 }
