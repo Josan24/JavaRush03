@@ -82,7 +82,7 @@ public class Juego {
 	public String toString() {
 		return "\n"
 				+ "Juego " + rank + "\n"
-				+ "nombre = " + nombre + "\n"
+				+ " nombre = " + nombre + "\n"
 				+ " plataforma = " + plataforma + "\n"
 				+ " año = " + ano 				+ "\n"
 				+ " genero = " + genero + "\n"
