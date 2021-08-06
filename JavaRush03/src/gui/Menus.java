@@ -17,7 +17,8 @@ public class Menus {
             "6) Los juegos del siglo XX\n" +
             "7) Gestión de juegos (Edit, Delete)\n" +
             "8) Listados de juegos (filtrados por todo tipo de géneros)\n" +
-            "9) Los juegos que aparecen en años pares\n");
+            "9) Los juegos que aparecen en años pares\n" +
+            "0) Salir\n");
         opcion = LecturaDatos.leerInteger("Seleciona una opción: ");
            
         return opcion;
@@ -28,7 +29,8 @@ public class Menus {
 
         System.out.print("**** Menú Gestión de Juegos ****\n" +
             "1) Editar Juego\n" +
-            "2) Eliminar Juego\n");
+            "2) Eliminar Juego\n" +
+            "0) Atrás\n");
         opcion = LecturaDatos.leerInteger("Seleciona una opción: ");
            
         return opcion;
@@ -42,7 +44,8 @@ public class Menus {
     		"2)Plataforma\n" +
     		"3)Año\n" +
     		"4)Genero\n" +
-    		"5)Editor\n");
+    		"5)Editor\n" +
+            "0) Atrás\n");
         opcion = LecturaDatos.leerInteger("Seleciona campo a editar: ");
            
         return opcion;
