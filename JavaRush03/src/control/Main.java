@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Datos.Catalogo;
 import gui.Menus;
 import modelo.Juego;
+import services.GestionCatalogo;
 import utilidades.LecturaFichero;
 
 public class Main {
@@ -29,7 +30,10 @@ public class Main {
 			switch(option) {
 			
 			case 1:
-				System.out.println("Estamos trabajando en ello");
+				GestionCatalogo gc = new GestionCatalogo();			
+				System.out.println("Añadir un nuevo juego");
+				gc.agregarAlCatalogo(c);
+				
 				break;
 			case 2:
 				
