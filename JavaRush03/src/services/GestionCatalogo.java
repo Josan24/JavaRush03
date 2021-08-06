@@ -1,8 +1,12 @@
 package services;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 import Datos.Catalogo;
+import gui.PantallaMenus;
 import modelo.ConsolasNintendo;
 import modelo.Juego;
 import utilidades.LecturaDatos;
@@ -15,10 +19,10 @@ public class GestionCatalogo {
 
 		j.setRank(LecturaDatos.leerInteger("Introduce el ranking del juego"));
 		j.setNombre(LecturaDatos.leerString("Introduce el nombre del juego"));
-		j.setAno(LecturaDatos.leerInteger("Introduce el año del juego"));
+		j.setAno(LecturaDatos.leerInteger("Introduce el aï¿½o del juego"));
 		j.setEditor(LecturaDatos.leerString("Introduce el editor del juego"));
 		j.setPlataforma(LecturaDatos.leerString("Introduce la plataforma del juego"));
-		j.setGenero(LecturaDatos.leerString("Introduce el género del juego"));
+		j.setGenero(LecturaDatos.leerString("Introduce el gï¿½nero del juego"));
 
 		return j;
 
@@ -34,7 +38,7 @@ public class GestionCatalogo {
 		
 		for(Juego juego : c.getCatalogo()) {
 			if(juego.getGenero().equals(genero)) {
-				//Añadimos el juego si tiene el mismo genero por el que filtramos
+				//Anadimos el juego si tiene el mismo genero por el que filtramos
 				filtrado.add(juego);
 			}
 		}
@@ -48,6 +52,32 @@ public class GestionCatalogo {
 		c.imprimirCatalogo();
 	}
 	
+	public void eliminarJuego(Catalogo c) {
+		
+		
+		int id = LecturaDatos.leerInteger("Introduce el ID: ");
+		boolean encontrado = false;
+		
+		for (int i = 0; i < c.catalogo.size(); i++) {
+			
+			if (id == c.catalogo.get(i).getRank()) {
+				
+				c.catalogo.remove(i);
+				encontrado = true;
+			}
+			
+			
+		}
+		
+		if (encontrado) {
+			
+			System.out.println("Se ha eliminado el juego. \n");
+		} else {
+			
+			System.out.println("No hay ningï¿½n juego con ese ID. \n");
+		}
+	}
+
 	
 	public ArrayList<Juego> listaJuegosNintendo(Catalogo c){
 		
@@ -82,5 +112,122 @@ public class GestionCatalogo {
 		
 		// Devolvemos la lista de juegos ya filtrados
 		return filtrado;
+
 	}
+	
+	public void editarJuego(Catalogo c) {
+		
+		
+		int id = LecturaDatos.leerInteger("Introduce el ID: ");
+		boolean encontrado = false;
+		Juego juego = null;
+		
+		for (int i = 0; i < c.catalogo.size(); i++) {
+			
+			if (id == c.catalogo.get(i).getRank()) {
+				
+				juego = c.catalogo.get(i);
+				System.out.println("Juego encontrado\n");
+				encontrado = true;
+			}
+			
+			
+		}
+		
+		if (encontrado) {
+			
+			int option = 0;
+
+			do {
+				PantallaMenus.menuEditarJuego();
+				option = LecturaDatos.leerInteger("Seleciona una opcion: ");
+
+				switch (option) {
+
+				case 1:
+					juego.setNombre(LecturaDatos.leerString("Nuevo nombre: "));
+
+					break;
+				case 2:
+
+					juego.setPlataforma(LecturaDatos.leerString("Nueva plataforma: "));
+
+					break;
+				case 3:
+				
+					juego.setAno(LecturaDatos.leerInteger("Nuevo ano: "));
+
+					break;
+				case 4:
+
+					juego.setGenero(LecturaDatos.leerString("Nuevo Genero: "));
+
+					break;
+				case 5:
+
+					juego.setEditor(LecturaDatos.leerString("Nuevo Editor: "));
+
+					break;
+				case 0:
+					
+					option = 0;
+
+				}
+
+			} while (option != 0);
+		} else {
+			
+			System.out.println("No hay ningun juego con ese ID. \n");
+		}
+	}
+
+	public void listaEditores(Catalogo c) {
+		//Inicializo un set de editores para no tener valores repetidos
+		Set<String> editores = new HashSet<String>();
+		
+		for(Juego juego : c.getCatalogo()) {
+			editores.add(juego.getEditor());
+		}
+		
+		//Imprimimos la lista de editores
+		System.out.println(editores);
+		
+	}
+	
+	
+	public void juegosAniosPares(Catalogo c) {
+		
+		Catalogo aniosPares = new Catalogo();
+		aniosPares.catalogo = new ArrayList<Juego>();
+		
+		
+		for(Juego juego : c.getCatalogo()) {
+			
+			if(juego.getAno() % 2 == 0) {
+				
+				aniosPares.catalogo.add(juego);
+			}
+			
+		}
+		
+		aniosPares.imprimirCatalogo();
+	}
+	public void juegosSigloXX(Catalogo c) {
+		
+		Catalogo sigloXX = new Catalogo();
+		sigloXX.catalogo = new ArrayList<Juego>();
+		
+		
+		for(Juego juego : c.getCatalogo()) {
+			
+			if(juego.getAno() > 1899) {
+				
+				sigloXX.catalogo.add(juego);
+			}
+			
+		}
+		
+		sigloXX.imprimirCatalogo();
+	}
+	
 }
