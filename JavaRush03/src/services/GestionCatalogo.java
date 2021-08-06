@@ -1,6 +1,9 @@
 package services;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 import Datos.Catalogo;
 import modelo.ConsolasNintendo;
@@ -82,5 +85,19 @@ public class GestionCatalogo {
 		
 		// Devolvemos la lista de juegos ya filtrados
 		return filtrado;
+	}
+	
+	public void listaEditores(Catalogo c) {
+		//Inicializo un set de editores para no tener valores repetidos
+		Set<String> editores = new HashSet<String>();
+		
+		for(Juego juego : c.getCatalogo()) {
+			editores.add(juego.getEditor());
+		}
+		
+		//Imprimimos la lista de editores
+		System.out.println("Lista de editores: ");
+		System.out.println(editores);
+		
 	}
 }
