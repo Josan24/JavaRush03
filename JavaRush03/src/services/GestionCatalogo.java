@@ -145,5 +145,22 @@ public class GestionCatalogo {
 		
 		aniosPares.imprimirCatalogo();
 	}
+	public void juegosSigloXX(Catalogo c) {
+		
+		Catalogo sigloXX = new Catalogo();
+		sigloXX.catalogo = new ArrayList<Juego>();
+		
+		
+		for(Juego juego : c.getCatalogo()) {
+			
+			if(juego.getAno() > 1899) {
+				
+				sigloXX.catalogo.add(juego);
+			}
+			
+		}
+		
+		sigloXX.imprimirCatalogo();
+	}
 	
 }
