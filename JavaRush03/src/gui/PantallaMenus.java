@@ -44,5 +44,22 @@ public class PantallaMenus {
             "0) Atrás\n");
         
 	}
+	public static void menuListaGeneros() {
+        System.out.print("**** Generos Disponibles****\n" +
+    		"1)Action\n" +
+    		"2)Adventure\n" +
+    		"3)Fighting\n" +
+    		"4)Misc\n" +
+    		"5)Platform\n" +
+            "6) Puzzle\n" +
+            "7)Racing\n" +
+            "8)Role-Playing\n" +
+            "9)Shooter\n" +
+            "10)Simulation\n" +
+            "11)Sports\n" +
+            "12)Strategy\n" +
+        	"0)atras\n");
+        
+	}
 
 }

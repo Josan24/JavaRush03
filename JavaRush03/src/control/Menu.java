@@ -7,7 +7,7 @@ import utilidades.LecturaDatos;
 /**
  * 
  * @author JavaRush
- * Clase que muestra el menú principal y el submení editar
+ * Clase que muestra el menï¿½ principal y el submenï¿½ editar
  *
  */
 public class Menu {
@@ -60,12 +60,13 @@ public class Menu {
 				
 				break;
 			case 7:
-				System.out.println("Gestión de juegos (Edit, Delete)");			
+				System.out.println("Gestiï¿½n de juegos (Edit, Delete)");			
 				controlMenuEdicion(c);
 				
 				break;
 			case 8:
 				System.out.println("Listados de juegos (filtrados por todo tipo de gÃ©neros)");
+				gc.juegosPorGeneros(c);
 				break;
 				
 			case 9:
