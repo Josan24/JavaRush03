@@ -3,6 +3,7 @@ package services;
 import java.util.ArrayList;
 
 import Datos.Catalogo;
+import gui.PantallaMenus;
 import modelo.ConsolasNintendo;
 import modelo.Juego;
 import utilidades.LecturaDatos;
@@ -70,7 +71,7 @@ public class GestionCatalogo {
 			System.out.println("Se ha eliminado el juego. \n");
 		} else {
 			
-			System.out.println("No hay ningún juego con ese ID. \n");
+			System.out.println("No hay ningï¿½n juego con ese ID. \n");
 		}
 	}
 
@@ -109,5 +110,71 @@ public class GestionCatalogo {
 		// Devolvemos la lista de juegos ya filtrados
 		return filtrado;
 
+	}
+	
+	public void editarJuego(Catalogo c) {
+		
+		
+		int id = LecturaDatos.leerInteger("Introduce el ID: ");
+		boolean encontrado = false;
+		Juego juego = null;
+		
+		for (int i = 0; i < c.catalogo.size(); i++) {
+			
+			if (id == c.catalogo.get(i).getRank()) {
+				
+				juego = c.catalogo.get(i);
+				System.out.println("Juego encontrado\n");
+				encontrado = true;
+			}
+			
+			
+		}
+		
+		if (encontrado) {
+			
+			int option = 0;
+
+			do {
+				PantallaMenus.menuEditarJuego();
+				option = LecturaDatos.leerInteger("Seleciona una opcion: ");
+
+				switch (option) {
+
+				case 1:
+					juego.setNombre(LecturaDatos.leerString("Nuevo nombre: "));
+
+					break;
+				case 2:
+
+					juego.setPlataforma(LecturaDatos.leerString("Nueva plataforma: "));
+
+					break;
+				case 3:
+				
+					juego.setAno(LecturaDatos.leerInteger("Nuevo ano: "));
+
+					break;
+				case 4:
+
+					juego.setGenero(LecturaDatos.leerString("Nuevo Genero: "));
+
+					break;
+				case 5:
+
+					juego.setEditor(LecturaDatos.leerString("Nuevo Editor: "));
+
+					break;
+				case 0:
+					
+					option = 0;
+
+				}
+
+			} while (option != 0);
+		} else {
+			
+			System.out.println("No hay ningun juego con ese ID. \n");
+		}
 	}
 }

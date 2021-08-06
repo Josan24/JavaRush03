@@ -83,7 +83,7 @@ public class Menu {
 
 			case 1:
 				System.out.println("Editar juego");
-				
+				gc.editarJuego(c);
 
 				break;
 			case 2:
