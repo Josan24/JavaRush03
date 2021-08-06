@@ -60,6 +60,8 @@ public class Menu {
 				break;
 			case 9:
 				System.out.println("Los juegos que aparecen en años pares");
+				gc.juegosAniosPares(c);
+				
 				break;
 			case 0:
 				System.out.println("Salir");
