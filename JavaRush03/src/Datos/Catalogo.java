@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import modelo.Juego;
 
+/**
+ * 
+ * @author alumno
+ *
+ *Clase que comprende la biblioteca de juegos
+ */
 public class Catalogo {
 
 	ArrayList<Juego> catalogo;
@@ -30,10 +36,14 @@ public class Catalogo {
 		return "Catalogo [catalogo=" + catalogo + "]";
 	}
 
-	public void agregarJuego(Juego j) {
+	public void agregarJuego(Juego j) { 
 		catalogo.add(j);
 	}
 
+	/**
+	 * Metodo para agregar juegos nuevos e incluirlos en Catalogo
+	 */
+	
 	public void imprimirCatalogo() {
 
 		Juego[] j = new Juego[0];
