@@ -25,4 +25,8 @@ public class GestionCatalogo {
 		c.agregarJuego(nuevoJuego());
 	}
 
+	
+	public generarInforme(Catalogo c) {
+		
+	}
 }

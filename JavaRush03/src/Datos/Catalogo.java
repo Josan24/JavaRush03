@@ -4,6 +4,13 @@ import java.util.ArrayList;
 
 import modelo.Juego;
 
+/**
+ * 
+ * @author alumno
+ *
+ *La clase catalogo es una biblioteca que llama a la clase Juego para, 
+ *cogiendo el arraylist que los contiene todos, agregar uno nuevo e imprimirlo.
+ */
 public class Catalogo {
 
 	ArrayList<Juego> catalogo;

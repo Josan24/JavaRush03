@@ -1,5 +1,12 @@
 package modelo;
 
+/**
+ * 
+ * @author alumno
+ *
+ *La clase juego, el modelo de datos, incluye como atributos todas las columnas de datos que trae el csv.
+ *
+ */
 public class Juego {
 
 	int rank;
