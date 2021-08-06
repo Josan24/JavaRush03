@@ -37,6 +37,7 @@ public class Menu {
 				break;
 			case 4:
 				System.out.println("Juegos para consolas de Nintendo");
+				gc2.generarInforme(new Catalogo(new GestionCatalogo().listaJuegosNintendo(c)));
 				break;
 			case 5:
 				System.out.println("Listado de editores");
@@ -66,6 +67,5 @@ public class Menu {
 	}
 	
 
-	
 
 }
