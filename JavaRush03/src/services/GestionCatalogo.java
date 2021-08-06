@@ -8,6 +8,7 @@ import java.util.Set;
 import Datos.Catalogo;
 import gui.PantallaMenus;
 import modelo.ConsolasNintendo;
+import modelo.Generos;
 import modelo.Juego;
 import utilidades.LecturaDatos;
 
@@ -74,7 +75,7 @@ public class GestionCatalogo {
 			System.out.println("Se ha eliminado el juego. \n");
 		} else {
 
-			System.out.println("No hay ningún juego con ese Nombre. \n");
+			System.out.println("No hay ningï¿½n juego con ese Nombre. \n");
 
 		}
 	}
@@ -252,6 +253,59 @@ public class GestionCatalogo {
 		}
 
 		sigloXX.imprimirCatalogo();
+	}
+	
+	public void juegosPorGeneros(Catalogo c) {
+		int option = 0;
+		
+		do {
+			PantallaMenus.menuListaGeneros();
+			option = LecturaDatos.leerInteger("Seleciona una opcion: ");
+	
+			switch (option) {
+
+				case 1:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.ACTION.getGeneros())));
+					break;
+				case 2:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.ADVENTURE.getGeneros())));
+					break;
+				case 3:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.FIGHTING.getGeneros())));
+					break;
+				case 4:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.MISC.getGeneros())));
+					break;
+				case 5:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.PLATFORM.getGeneros())));
+					break;
+				case 6:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.PUZZLE.getGeneros())));
+					break;
+				case 7:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.RACING.getGeneros())));
+					break;
+				case 8:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.ROLE.getGeneros())));
+					break;
+				case 9:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.SHOOTER.getGeneros())));
+					break;
+				case 10:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.SIMULATION.getGeneros())));
+					break;
+				case 11:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.SPORTS.getGeneros())));
+					break;
+				case 12:
+					generarInforme(new Catalogo (listaPorGenero(c,Generos.STRATEGY.getGeneros())));
+					break;
+				case 0:
+	
+					option = 0;
+	
+			}
+		} while (option != 0);
 	}
 
 }
