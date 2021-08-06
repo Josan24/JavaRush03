@@ -43,9 +43,12 @@ public class Menu {
 				break;
 			case 5:
 				System.out.println("Listado de editores");
+				gc.listaEditores(c);
 				break;
 			case 6:
 				System.out.println("Los juegos del siglo XX");
+				gc.juegosSigloXX(c);
+				
 				break;
 			case 7:
 				System.out.println("Gestión de juegos (Edit, Delete)");
@@ -58,7 +61,10 @@ public class Menu {
 				System.out.println("Listados de juegos (filtrados por todo tipo de géneros)");
 				break;
 			case 9:
+
 				System.out.println("Los juegos que aparecen en años pares");
+				gc.juegosAniosPares(c);
+
 				break;
 			case 0:
 				System.out.println("Salir");
