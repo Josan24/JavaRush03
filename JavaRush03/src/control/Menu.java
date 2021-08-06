@@ -1,7 +1,5 @@
 package control;
 
-import java.util.ArrayList;
-
 import Datos.Catalogo;
 import gui.PantallaMenus;
 import services.GestionCatalogo;
@@ -50,8 +48,7 @@ public class Menu {
 				break;
 			case 7:
 				System.out.println("Gestión de juegos (Edit, Delete)");
-				// Buscar juego
-				
+				// Buscar juego				
 				controlMenuEdicion(c);
 
 				break;
