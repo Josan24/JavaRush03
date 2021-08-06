@@ -1,5 +1,7 @@
 package services;
 
+import java.util.ArrayList;
+
 import Datos.Catalogo;
 import modelo.Juego;
 import utilidades.LecturaDatos;
@@ -24,6 +26,23 @@ public class GestionCatalogo {
 	public void agregarAlCatalogo(Catalogo c) {
 		c.agregarJuego(nuevoJuego());
 	}
+	
+	public ArrayList<Juego> listaPorGenero(Catalogo c, String genero){
+		
+		ArrayList<Juego> filtrado = new ArrayList<Juego>();
+		
+		for(Juego juego : c.getCatalogo()) {
+			if(juego.getGenero().equals(genero)) {
+				//Añadimos el juego si tiene el mismo genero por el que filtramos
+				filtrado.add(juego);
+			}
+		}
+		
+		// Devolvemos la lista de juegos ya filtrados
+		return filtrado;
+	}
+	
+	
 
 	
 	public void generarInforme(Catalogo c) {
