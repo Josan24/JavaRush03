@@ -3,23 +3,23 @@ package gui;
 import modelo.Juego;
 import utilidades.LecturaDatos;
 
-public class Menus {
+public class PantallaMenus {
 	
 	public static int menuInicial() {
 		int opcion = 0;
 
         System.out.print("**** Menú inicial ****\n" +
-            "1) Gestión de juegos (altas)\n" +
-            "2) Listado de juegos Género:\"plataforma\"\n" +
+            "1) Gestion de juegos (altas)\n" +
+            "2) Listado de juegos Genero:\"plataforma\"\n" +
             "3) Listado de juegos\n" +
             "4) Juegos para consolas de Nintendo\n" +
             "5) Listado de editores\n" +
             "6) Los juegos del siglo XX\n" +
-            "7) Gestión de juegos (Edit, Delete)\n" +
-            "8) Listados de juegos (filtrados por todo tipo de géneros)\n" +
-            "9) Los juegos que aparecen en años pares\n" +
+            "7) Gestion de juegos (Edit, Delete)\n" +
+            "8) Listados de juegos (filtrados por todo tipo de generos)\n" +
+            "9) Los juegos que aparecen en anos pares\n" +
             "0) Salir\n");
-        opcion = LecturaDatos.leerInteger("Seleciona una opción: ");
+        opcion = LecturaDatos.leerInteger("Seleciona una opcion: ");
            
         return opcion;
 	}
@@ -27,11 +27,11 @@ public class Menus {
 	public static int menuGestionJuegos() {
 		int opcion = 0;
 
-        System.out.print("**** Menú Gestión de Juegos ****\n" +
+        System.out.print("**** Menú Gestion de Juegos ****\n" +
             "1) Editar Juego\n" +
             "2) Eliminar Juego\n" +
-            "0) Atrás\n");
-        opcion = LecturaDatos.leerInteger("Seleciona una opción: ");
+            "0) Atras\n");
+        opcion = LecturaDatos.leerInteger("Seleciona una opcion: ");
            
         return opcion;
 	}
