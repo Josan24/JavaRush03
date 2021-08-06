@@ -27,26 +27,22 @@ public class PantallaMenus {
 	public static void menuGestionJuegos() {
 
 
-        System.out.print("\n**** Men� Gestion de Juegos ****\n" +
+        System.out.print("\n**** Men� Gestion de Juegos ****\n" +
             "1) Editar Juego\n" +
             "2) Eliminar Juego\n" +
             "0) Atras\n\n");
 
 	}
 	
-	public static int menuEditarJuego(Juego juego) {
-		int opcion = 0;
-
-        System.out.print("**** Editar Juego " + juego.getNombre() +" ****\n" +
+	public static void menuEditarJuego() {
+        System.out.print("**** Editar Juego ****\n" +
     		"1)Nombre\n" +
     		"2)Plataforma\n" +
     		"3)Año\n" +
     		"4)Genero\n" +
     		"5)Editor\n" +
             "0) Atrás\n");
-        opcion = LecturaDatos.leerInteger("Seleciona campo a editar: ");
-           
-        return opcion;
+        
 	}
 
 }

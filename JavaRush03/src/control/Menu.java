@@ -19,7 +19,7 @@ public class Menu {
 			switch (option) {
 
 			case 1:
-				System.out.println("Añadir un nuevo juego");
+				System.out.println("AÃ±adir un nuevo juego");
 				gc.agregarAlCatalogo(c);
 
 				break;
@@ -51,19 +51,20 @@ public class Menu {
 				
 				break;
 			case 7:
-				System.out.println("Gestión de juegos (Edit, Delete)");
+				System.out.println("GestiÃ³n de juegos (Edit, Delete)");
 				// Buscar juego
 				
 				controlMenuEdicion(c);
 
 				break;
 			case 8:
-				System.out.println("Listados de juegos (filtrados por todo tipo de géneros)");
+				System.out.println("Listados de juegos (filtrados por todo tipo de gÃ©neros)");
 				break;
 			case 9:
-				System.out.println("Los juegos que aparecen en años pares");
+
+				System.out.println("Los juegos que aparecen en aÃ±os pares");
 				gc.juegosAniosPares(c);
-				
+
 				break;
 			case 0:
 				System.out.println("Salir");
@@ -88,7 +89,7 @@ public class Menu {
 
 			case 1:
 				System.out.println("Editar juego");
-				
+				gc.editarJuego(c);
 
 				break;
 			case 2:
