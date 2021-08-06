@@ -126,4 +126,41 @@ public class GestionCatalogo {
 		System.out.println(editores);
 		
 	}
+	
+	
+	public void juegosAniosPares(Catalogo c) {
+		
+		Catalogo aniosPares = new Catalogo();
+		aniosPares.catalogo = new ArrayList<Juego>();
+		
+		
+		for(Juego juego : c.getCatalogo()) {
+			
+			if(juego.getAno() % 2 == 0) {
+				
+				aniosPares.catalogo.add(juego);
+			}
+			
+		}
+		
+		aniosPares.imprimirCatalogo();
+	}
+	public void juegosSigloXX(Catalogo c) {
+		
+		Catalogo sigloXX = new Catalogo();
+		sigloXX.catalogo = new ArrayList<Juego>();
+		
+		
+		for(Juego juego : c.getCatalogo()) {
+			
+			if(juego.getAno() > 1899) {
+				
+				sigloXX.catalogo.add(juego);
+			}
+			
+		}
+		
+		sigloXX.imprimirCatalogo();
+	}
+	
 }
