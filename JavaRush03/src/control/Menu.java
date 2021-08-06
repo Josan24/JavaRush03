@@ -6,8 +6,18 @@ import Datos.Catalogo;
 import gui.PantallaMenus;
 import services.GestionCatalogo;
 import utilidades.LecturaDatos;
-
+/**
+ * 
+ * @author JavaRush
+ * Clase que muestra el menú principal y el submení editar
+ *
+ */
 public class Menu {
+	
+	/**
+	 * Menu principal que hace las llamadas a las opciones y submetodos
+	 * @param Catalogo c
+	 */
 	public static void controlMenu(Catalogo c) {
 		GestionCatalogo gc = new GestionCatalogo();
 		
@@ -32,8 +42,7 @@ public class Menu {
 				
 				break;
 			case 3:
-				System.out.println("Listado de juegos");
-				
+				System.out.println("Listado de juegos");				
 				gc.generarInforme(c);
 
 				break;
@@ -74,7 +83,10 @@ public class Menu {
 
 	}
 
-
+	/**
+	 * Submenu de edicion y eliminacion de juegos que hace las llamadas a las opciones y submetodos
+	 * @param Catalogo c
+	 */
 	public static void controlMenuEdicion(Catalogo c) {
 		
 		GestionCatalogo gc = new GestionCatalogo();
