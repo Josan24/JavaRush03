@@ -23,10 +23,10 @@ public class Main {
 		
 		switch(option) {
 		
-		case 1: 
+		case 1:
 			System.out.println("Estamos trabajando en ello");
 			break;
-		case 2: 
+		case 2:
 			
 			System.out.println("Listado de todos los juegos");
 			c.imprimirCatalogo();
