@@ -43,6 +43,7 @@ public class Menu {
 				break;
 			case 5:
 				System.out.println("Listado de editores");
+				gc.listaEditores(c);
 				break;
 			case 6:
 				System.out.println("Los juegos del siglo XX");

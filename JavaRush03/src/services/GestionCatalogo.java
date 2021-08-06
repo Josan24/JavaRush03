@@ -123,7 +123,6 @@ public class GestionCatalogo {
 		}
 		
 		//Imprimimos la lista de editores
-		System.out.println("Lista de editores: ");
 		System.out.println(editores);
 		
 	}
